@@ -2,62 +2,58 @@ module html5.elements.section;
 
 import html5;
 
-class SectionElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class ArticleElement : Html5Element!("article"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ArticleElement : SectionElementPrototype!("article"){
+class BodyElement : Html5Element!("body"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class BodyElement : SectionElementPrototype!("body"){
+class SectionElement : Html5Element!("section"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SectionElement : SectionElementPrototype!("section"){
+class NavElement : Html5Element!("nav"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class NavElement : SectionElementPrototype!("nav"){
+class AsideElement : Html5Element!("aside"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class AsideElement : SectionElementPrototype!("aside"){
+class H1Element : Html5Element!("h1"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class H1Element : SectionElementPrototype!("h1"){
+class H2Element : Html5Element!("h2"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class H2Element : SectionElementPrototype!("h2"){
+class H3Element : Html5Element!("h3"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class H3Element : SectionElementPrototype!("h3"){
+class H4Element : Html5Element!("h4"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class H4Element : SectionElementPrototype!("h4"){
+class H5Element : Html5Element!("h5"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class H5Element : SectionElementPrototype!("h5"){
+class H6Element : Html5Element!("h6"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class H6Element : SectionElementPrototype!("h6"){
+class HeaderElement : Html5Element!("header"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class HeaderElement : SectionElementPrototype!("header"){
+class FooterElement : Html5Element!("footer"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class FooterElement : SectionElementPrototype!("footer"){
-	mixin(ElementConstructorTemplate!());
-}
-
-class AddressElement : SectionElementPrototype!("address"){
+class AddressElement : Html5Element!("address"){
 	mixin(ElementConstructorTemplate!());
 }

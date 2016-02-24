@@ -2,46 +2,42 @@ module html5.elements.tabular;
 
 import html5;
 
-class TabularElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class TableElement : Html5Element!("table"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TableElement : TabularElementPrototype!("table"){
+class CaptionElement : Html5Element!("caption"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class CaptionElement : TabularElementPrototype!("caption"){
+class ColgroupElement : Html5Element!("colgroup"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ColgroupElement : TabularElementPrototype!("colgroup"){
+class ColElement : Html5Element!("col"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ColElement : TabularElementPrototype!("col"){
+class TbodyElement : Html5Element!("tbody"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TbodyElement : TabularElementPrototype!("tbody"){
+class TheadElement : Html5Element!("thead"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TheadElement : TabularElementPrototype!("thead"){
+class TfootElement : Html5Element!("tfoot"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TfootElement : TabularElementPrototype!("tfoot"){
+class TrElement : Html5Element!("tr"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TrElement : TabularElementPrototype!("tr"){
+class TdElement : Html5Element!("td"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TdElement : TabularElementPrototype!("td"){
-	mixin(ElementConstructorTemplate!());
-}
-
-class ThElement : TabularElementPrototype!("th"){
+class ThElement : Html5Element!("th"){
 	mixin(ElementConstructorTemplate!());
 }

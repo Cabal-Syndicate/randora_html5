@@ -2,66 +2,62 @@ module html5.elements.form;
 
 import html5;
 
-class FormElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class FormElement : Html5Element!("form"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class FormElement : FormElementPrototype!("form"){
+class LabelElement : Html5Element!("label"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class LabelElement : FormElementPrototype!("label"){
+class InputElement : Html5Element!("input"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class InputElement : FormElementPrototype!("input"){
+class ButtonElement : Html5Element!("button"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ButtonElement : FormElementPrototype!("button"){
+class SelectElement : Html5Element!("select"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SelectElement : FormElementPrototype!("select"){
+class DatalistElement : Html5Element!("datalist"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class DatalistElement : FormElementPrototype!("datalist"){
+class OptgroupElement : Html5Element!("optgroup"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class OptgroupElement : FormElementPrototype!("optgroup"){
+class OptionElement : Html5Element!("option"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class OptionElement : FormElementPrototype!("option"){
+class TextareaElement : Html5Element!("textarea"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TextareaElement : FormElementPrototype!("textarea"){
+class KeygenElement : Html5Element!("keygen"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class KeygenElement : FormElementPrototype!("keygen"){
+class OutputElement : Html5Element!("output"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class OutputElement : FormElementPrototype!("output"){
+class ProgressElement : Html5Element!("progress"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ProgressElement : FormElementPrototype!("progress"){
+class MeterElement : Html5Element!("meter"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class MeterElement : FormElementPrototype!("meter"){
+class FieldsetElement : Html5Element!("fieldset"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class FieldsetElement : FormElementPrototype!("fieldset"){
-	mixin(ElementConstructorTemplate!());
-}
-
-class LegendElement : FormElementPrototype!("legend"){
+class LegendElement : Html5Element!("legend"){
 	mixin(ElementConstructorTemplate!());
 }

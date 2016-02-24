@@ -2,50 +2,46 @@ module html5.elements.embedded;
 
 import html5;
 
-class EmbeddedElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class ImgElement : Html5Element!("img"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ImgElement : EmbeddedElementPrototype!("img"){
+class IframeElement : Html5Element!("iframe"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class IframeElement : EmbeddedElementPrototype!("iframe"){
+class EmbedElement : Html5Element!("embed"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class EmbedElement : EmbeddedElementPrototype!("embed"){
+class ObjectElement : Html5Element!("object"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ObjectElement : EmbeddedElementPrototype!("object"){
+class ParamElement : Html5Element!("param"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ParamElement : EmbeddedElementPrototype!("param"){
+class VideoElement : Html5Element!("video"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class VideoElement : EmbeddedElementPrototype!("video"){
+class AudioElement : Html5Element!("audio"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class AudioElement : EmbeddedElementPrototype!("audio"){
+class SourceElement : Html5Element!("source"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SourceElement : EmbeddedElementPrototype!("source"){
+class TrackElement : Html5Element!("track"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TrackElement : EmbeddedElementPrototype!("track"){
+class MapElement : Html5Element!("map"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class MapElement : EmbeddedElementPrototype!("map"){
-	mixin(ElementConstructorTemplate!());
-}
-
-class AreaElement : EmbeddedElementPrototype!("area"){
+class AreaElement : Html5Element!("area"){
 	mixin(ElementConstructorTemplate!());
 }

@@ -2,131 +2,132 @@ module html5.elements.text_level;
 
 import html5;
 
-class TextLevelElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class AElement : Html5Element!("a"){
+	mixin(ElementConstructorTemplate!());
+	mixin(AttributeTemplate!(typeof(this), "href"));
+	mixin(AttributeTemplate!(typeof(this), "target"));
+	mixin(AttributeTemplate!(typeof(this), "download"));
+	mixin(AttributeTemplate!(typeof(this), "rel"));
+	mixin(AttributeTemplate!(typeof(this), "hreflang"));
+	mixin(AttributeTemplate!(typeof(this), "type"));
+}
+
+class EmElement : Html5Element!("em"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class AElement : TextLevelElementPrototype!("a"){
-	mixin(ElementConstructorTemplate!());
-	mixin(AttributeTemplate!("href"));
-}
-
-class EmElement : TextLevelElementPrototype!("em"){
+class StrongElement : Html5Element!("strong"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class StrongElement : TextLevelElementPrototype!("strong"){
+class SmallElement : Html5Element!("small"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SmallElement : TextLevelElementPrototype!("small"){
+class SElement : Html5Element!("s"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SElement : TextLevelElementPrototype!("s"){
+class CiteElement : Html5Element!("cite"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class CiteElement : TextLevelElementPrototype!("cite"){
+class QElement : Html5Element!("q"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class QElement : TextLevelElementPrototype!("q"){
+class DfnElement : Html5Element!("dfn"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class DfnElement : TextLevelElementPrototype!("dfn"){
+class AbbrElement : Html5Element!("abbr"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class AbbrElement : TextLevelElementPrototype!("abbr"){
+class DataElement : Html5Element!("data"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class DataElement : TextLevelElementPrototype!("data"){
+class TimeElement : Html5Element!("time"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TimeElement : TextLevelElementPrototype!("time"){
+class CodeElement : Html5Element!("code"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class CodeElement : TextLevelElementPrototype!("code"){
+class VarElement : Html5Element!("var"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class VarElement : TextLevelElementPrototype!("var"){
+class SampElement : Html5Element!("samp"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SampElement : TextLevelElementPrototype!("samp"){
+class KbdElement : Html5Element!("kbd"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class KbdElement : TextLevelElementPrototype!("kbd"){
+class SubElement : Html5Element!("sub"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SubElement : TextLevelElementPrototype!("sub"){
+class SupsElement : Html5Element!("sups"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SupsElement : TextLevelElementPrototype!("sups"){
+class IElement : Html5Element!("i"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class IElement : TextLevelElementPrototype!("i"){
+class BElement : Html5Element!("b"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class BElement : TextLevelElementPrototype!("b"){
+class UElement : Html5Element!("u"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class UElement : TextLevelElementPrototype!("u"){
+class MarkElement : Html5Element!("mark"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class MarkElement : TextLevelElementPrototype!("mark"){
+class RubyElement : Html5Element!("ruby"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class RubyElement : TextLevelElementPrototype!("ruby"){
+class RbElement : Html5Element!("rb"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class RbElement : TextLevelElementPrototype!("rb"){
+class RtElement : Html5Element!("rt"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class RtElement : TextLevelElementPrototype!("rt"){
+class RtcElement : Html5Element!("rtc"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class RtcElement : TextLevelElementPrototype!("rtc"){
+class RpElement : Html5Element!("rp"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class RpElement : TextLevelElementPrototype!("rp"){
+class BdiElement : Html5Element!("bdi"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class BdiElement : TextLevelElementPrototype!("bdi"){
+class BdoElement : Html5Element!("bdo"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class BdoElement : TextLevelElementPrototype!("bdo"){
+class SpanElement : Html5Element!("span"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SpanElement : TextLevelElementPrototype!("span"){
+class BrElement : Html5Element!("br"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class BrElement : TextLevelElementPrototype!("br"){
-	mixin(ElementConstructorTemplate!());
-}
-
-class WbrElement : TextLevelElementPrototype!("wbr"){
+class WbrElement : Html5Element!("wbr"){
 	mixin(ElementConstructorTemplate!());
 }

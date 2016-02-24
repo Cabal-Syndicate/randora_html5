@@ -2,22 +2,18 @@ module html5.elements.scripting;
 
 import html5;
 
-class ScriptingElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class ScriptElement : Html5Element!("script"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class ScriptElement : ScriptingElementPrototype!("script"){
+class NoscriptElement : Html5Element!("noscript"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class NoscriptElement : ScriptingElementPrototype!("noscript"){
+class TemplateElement : Html5Element!("template"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TemplateElement : ScriptingElementPrototype!("template"){
-	mixin(ElementConstructorTemplate!());
-}
-
-class CanvasElement : ScriptingElementPrototype!("canvas"){
+class CanvasElement : Html5Element!("canvas"){
 	mixin(ElementConstructorTemplate!());
 }
