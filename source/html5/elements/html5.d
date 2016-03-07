@@ -61,6 +61,7 @@ template AttributeTemplate(T, string var_name){
 }
 
 class Html5Element(string tag_name = "") : Element{
+	bool can_be_empty = false;
 	bool[string] _classes = null;
 	
 	mixin(AttributeTemplate!(typeof(this), "id"));
@@ -124,7 +125,9 @@ class Html5Element(string tag_name = "") : Element{
 	
 	this(string value = ""){
 		super(new Html5Tag!(tag_name)());
-		this ~= new Text(value); //TODO: Temporary fix. Firefox doesn't like it when some elements are empty;
+		if(can_be_empty){
+			this ~= new Text(value); //TODO: Temporary fix. Firefox doesn't like it when some elements are empty;
+		}
 	}
 
 	this(Element element){
