@@ -8,4 +8,3 @@ class WhiterElement : HrElement{
 		this.tag.attr["class"] = "whiter";
 	}
 }
-

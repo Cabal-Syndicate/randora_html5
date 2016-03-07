@@ -19,15 +19,43 @@ template ElementConstructorTemplate(){
 	this(Element[] p){
 		super(p);
 	}
+	
+	this(Attributes attributes, Element[] p = null){
+		super(p);
+		
+		this.id = attributes.id;
+		this.add_class(attributes.classes);
+		foreach(string s, string attribute; attributes.attributes){
+			this.tag.attr[s] = attribute;
+		}
+	}
+
+	this(Attributes attributes, string value = \"\"){
+		super(value);
+		
+		this.id = attributes.id;
+		this.add_class(attributes.classes);
+		foreach(string s, string attribute; attributes.attributes){
+			this.tag.attr[s] = attribute;
+		}
+	}
 	";
 }
 
-template AttributeTemplate(string var_name){
+struct Attributes{
+	string id = "";
+	string[] classes = null;
+	string[string] attributes = null;
+}
+
+template AttributeTemplate(T, string var_name){
 	static const char[] AttributeTemplate = "
-	string _"~var_name~" = \"\";
-	typeof(this) "~var_name~"(string value = \"\"){
-		this.tag.attr[\""~var_name~"\"] = value;
-		return this;
+	@property{
+		string _"~var_name~" = \"\";
+		typeof(this) "~var_name~"(string value = \"\"){
+			this.tag.attr[\""~var_name~"\"] = value;
+			return this;
+		}
 	}
 	";
 }
@@ -35,73 +63,64 @@ template AttributeTemplate(string var_name){
 class Html5Element(string tag_name = "") : Element{
 	bool[string] _classes = null;
 	
-	@property{
-		//Global Attributes
-		typeof(this) id(string value){
-			this.tag.attr["id"] = value;
-			return this;
-		}
-		//title
-		//lang
-		//translate
-		//dir
-		//class
-		//style
-		//data-
-	}
-
-	@property{
-		mixin(AttributeTemplate!("onabort"));
-		mixin(AttributeTemplate!("onblur"));
-		mixin(AttributeTemplate!("oncancel"));
-		mixin(AttributeTemplate!("oncanplay"));
-		mixin(AttributeTemplate!("oncanplaythrough"));
-		mixin(AttributeTemplate!("onchange"));
-		mixin(AttributeTemplate!("onclick"));
-		mixin(AttributeTemplate!("oncuechange"));
-		mixin(AttributeTemplate!("ondblclick"));
-		mixin(AttributeTemplate!("ondurationchange"));
-		mixin(AttributeTemplate!("onemptied"));
-		mixin(AttributeTemplate!("onended"));
-		mixin(AttributeTemplate!("onerror"));
-		mixin(AttributeTemplate!("onfocus"));
-		mixin(AttributeTemplate!("oninput"));
-		mixin(AttributeTemplate!("oninvalid"));
-		mixin(AttributeTemplate!("onkeydown"));
-		mixin(AttributeTemplate!("onkeypress"));
-		mixin(AttributeTemplate!("onkeyup"));
-		mixin(AttributeTemplate!("onload"));
-		mixin(AttributeTemplate!("onloadeddata"));
-		mixin(AttributeTemplate!("onloadedmetadata"));
-		mixin(AttributeTemplate!("onloadstart"));
-		mixin(AttributeTemplate!("onmousedown"));
-		mixin(AttributeTemplate!("onmouseenter"));
-		mixin(AttributeTemplate!("onmouseleave"));
-		mixin(AttributeTemplate!("onmousemove"));
-		mixin(AttributeTemplate!("onmouseout"));
-		mixin(AttributeTemplate!("onmouseover"));
-		mixin(AttributeTemplate!("onmouseup"));
-		mixin(AttributeTemplate!("onmousewheel"));
-		mixin(AttributeTemplate!("onpause"));
-		mixin(AttributeTemplate!("onplay"));
-		mixin(AttributeTemplate!("onplaying"));
-		mixin(AttributeTemplate!("onprogress"));
-		mixin(AttributeTemplate!("onratechange"));
-		mixin(AttributeTemplate!("onreset"));
-		mixin(AttributeTemplate!("onresize"));
-		mixin(AttributeTemplate!("onscroll"));
-		mixin(AttributeTemplate!("onseeked"));
-		mixin(AttributeTemplate!("onseeking"));
-		mixin(AttributeTemplate!("onselect"));
-		mixin(AttributeTemplate!("onshow"));
-		mixin(AttributeTemplate!("onstalled"));
-		mixin(AttributeTemplate!("onsubmit"));
-		mixin(AttributeTemplate!("onsuspend"));
-		mixin(AttributeTemplate!("ontimeupdate"));
-		mixin(AttributeTemplate!("ontoggle"));
-		mixin(AttributeTemplate!("onvolumechange"));
-		mixin(AttributeTemplate!("onwaiting"));
-	}
+	mixin(AttributeTemplate!(typeof(this), "id"));
+	mixin(AttributeTemplate!(typeof(this), "title"));
+	mixin(AttributeTemplate!(typeof(this), "lang"));
+	mixin(AttributeTemplate!(typeof(this), "translate"));
+	mixin(AttributeTemplate!(typeof(this), "dir"));
+	//mixin(AttributeTemplate!(typeof(this), "class"));
+	mixin(AttributeTemplate!(typeof(this), "style"));
+	//mixin(AttributeTemplate!(typeof(this), "data-"));
+	mixin(AttributeTemplate!(typeof(this), "onabort"));
+	mixin(AttributeTemplate!(typeof(this), "onblur"));
+	mixin(AttributeTemplate!(typeof(this), "oncancel"));
+	mixin(AttributeTemplate!(typeof(this), "oncanplay"));
+	mixin(AttributeTemplate!(typeof(this), "oncanplaythrough"));
+	mixin(AttributeTemplate!(typeof(this), "onchange"));
+	mixin(AttributeTemplate!(typeof(this), "onclick"));
+	mixin(AttributeTemplate!(typeof(this), "oncuechange"));
+	mixin(AttributeTemplate!(typeof(this), "ondblclick"));
+	mixin(AttributeTemplate!(typeof(this), "ondurationchange"));
+	mixin(AttributeTemplate!(typeof(this), "onemptied"));
+	mixin(AttributeTemplate!(typeof(this), "onended"));
+	mixin(AttributeTemplate!(typeof(this), "onerror"));
+	mixin(AttributeTemplate!(typeof(this), "onfocus"));
+	mixin(AttributeTemplate!(typeof(this), "oninput"));
+	mixin(AttributeTemplate!(typeof(this), "oninvalid"));
+	mixin(AttributeTemplate!(typeof(this), "onkeydown"));
+	mixin(AttributeTemplate!(typeof(this), "onkeypress"));
+	mixin(AttributeTemplate!(typeof(this), "onkeyup"));
+	mixin(AttributeTemplate!(typeof(this), "onload"));
+	mixin(AttributeTemplate!(typeof(this), "onloadeddata"));
+	mixin(AttributeTemplate!(typeof(this), "onloadedmetadata"));
+	mixin(AttributeTemplate!(typeof(this), "onloadstart"));
+	mixin(AttributeTemplate!(typeof(this), "onmousedown"));
+	mixin(AttributeTemplate!(typeof(this), "onmouseenter"));
+	mixin(AttributeTemplate!(typeof(this), "onmouseleave"));
+	mixin(AttributeTemplate!(typeof(this), "onmousemove"));
+	mixin(AttributeTemplate!(typeof(this), "onmouseout"));
+	mixin(AttributeTemplate!(typeof(this), "onmouseover"));
+	mixin(AttributeTemplate!(typeof(this), "onmouseup"));
+	mixin(AttributeTemplate!(typeof(this), "onmousewheel"));
+	mixin(AttributeTemplate!(typeof(this), "onpause"));
+	mixin(AttributeTemplate!(typeof(this), "onplay"));
+	mixin(AttributeTemplate!(typeof(this), "onplaying"));
+	mixin(AttributeTemplate!(typeof(this), "onprogress"));
+	mixin(AttributeTemplate!(typeof(this), "onratechange"));
+	mixin(AttributeTemplate!(typeof(this), "onreset"));
+	mixin(AttributeTemplate!(typeof(this), "onresize"));
+	mixin(AttributeTemplate!(typeof(this), "onscroll"));
+	mixin(AttributeTemplate!(typeof(this), "onseeked"));
+	mixin(AttributeTemplate!(typeof(this), "onseeking"));
+	mixin(AttributeTemplate!(typeof(this), "onselect"));
+	mixin(AttributeTemplate!(typeof(this), "onshow"));
+	mixin(AttributeTemplate!(typeof(this), "onstalled"));
+	mixin(AttributeTemplate!(typeof(this), "onsubmit"));
+	mixin(AttributeTemplate!(typeof(this), "onsuspend"));
+	mixin(AttributeTemplate!(typeof(this), "ontimeupdate"));
+	mixin(AttributeTemplate!(typeof(this), "ontoggle"));
+	mixin(AttributeTemplate!(typeof(this), "onvolumechange"));
+	mixin(AttributeTemplate!(typeof(this), "onwaiting"));
 	
 	this(string value = ""){
 		super(new Html5Tag!(tag_name)());
@@ -110,13 +129,17 @@ class Html5Element(string tag_name = "") : Element{
 
 	this(Element element){
 		this();
-		this ~= element;
+		if(element !is null){
+			this ~= element;
+		}
 	}
 
 	this(Element[] elements){
 		this();
-		foreach(int i, Element element; elements){
-			this ~= element;
+		if(elements !is null){
+			foreach(int i, Element element; elements){
+				this ~= element;
+			}
 		}
 	}
 

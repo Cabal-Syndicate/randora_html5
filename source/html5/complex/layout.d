@@ -7,4 +7,3 @@ class LayoutElement : DivElement{
 		super();
 	}
 }
-

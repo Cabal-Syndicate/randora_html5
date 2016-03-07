@@ -2,47 +2,45 @@ module html5.elements.grouping.grouping;
 
 import html5;
 
-class GroupingElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class DivElement : Html5Element!("div"){
 	mixin(ElementConstructorTemplate!());
 }
-
-class PElement : GroupingElementPrototype!("p"){
+class PElement : Html5Element!("p"){
 	mixin(ElementConstructorTemplate!());
 }
-class HrElement : GroupingElementPrototype!("hr"){
+class HrElement : Html5Element!("hr"){
 	mixin(ElementConstructorTemplate!());
 }
-class PreElement : GroupingElementPrototype!("pre"){
+class PreElement : Html5Element!("pre"){
 	mixin(ElementConstructorTemplate!());
 }
-class BlockquoteElement : GroupingElementPrototype!("blockquote"){
+class BlockquoteElement : Html5Element!("blockquote"){
 	mixin(ElementConstructorTemplate!());
 }
-class DlElement : GroupingElementPrototype!("dl"){
+class DlElement : Html5Element!("dl"){
 	mixin(ElementConstructorTemplate!());
 }
-class DtElement : GroupingElementPrototype!("dt"){
+class DtElement : Html5Element!("dt"){
 	mixin(ElementConstructorTemplate!());
 }
-class DdElement : GroupingElementPrototype!("dd"){
+class DdElement : Html5Element!("dd"){
 	mixin(ElementConstructorTemplate!());
 }
-class OlElement : GroupingElementPrototype!("ol"){
+class OlElement : Html5Element!("ol"){
 	mixin(ElementConstructorTemplate!());
 }
-class UlElement : GroupingElementPrototype!("ul"){
+class UlElement : Html5Element!("ul"){
 	mixin(ElementConstructorTemplate!());
 }
-class LiElement : GroupingElementPrototype!("li"){
+class LiElement : Html5Element!("li"){
 	mixin(ElementConstructorTemplate!());
 }
-class FigureElement : GroupingElementPrototype!("figure"){
+class FigureElement : Html5Element!("figure"){
 	mixin(ElementConstructorTemplate!());
 }
-class FigcaptionElement : GroupingElementPrototype!("figcaption"){
+class FigcaptionElement : Html5Element!("figcaption"){
 	mixin(ElementConstructorTemplate!());
 }
-class MainElement : GroupingElementPrototype!("main"){
+class MainElement : Html5Element!("main"){
 	mixin(ElementConstructorTemplate!());
 }
-

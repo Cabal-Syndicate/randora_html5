@@ -2,30 +2,26 @@ module html5.elements.metadata;
 
 import html5;
 
-class MetadataElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class BaseElement : Html5Element!("base"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class BaseElement : MetadataElementPrototype!("base"){
+class HeadElement : Html5Element!("head"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class HeadElement : MetadataElementPrototype!("head"){
+class LinkElement : Html5Element!("link"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class LinkElement : MetadataElementPrototype!("link"){
+class MetaElement : Html5Element!("meta"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class MetaElement : MetadataElementPrototype!("meta"){
+class TitleElement : Html5Element!("title"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class TitleElement : MetadataElementPrototype!("title"){
-	mixin(ElementConstructorTemplate!());
-}
-
-class StyleElement : MetadataElementPrototype!("style"){
+class StyleElement : Html5Element!("style"){
 	mixin(ElementConstructorTemplate!());
 }

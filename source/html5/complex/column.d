@@ -12,4 +12,3 @@ class ColumnElement : DivElement{
 		this.tag.attr["class"] = "col-md-" ~ to!(string)(this.grid);
 	}
 }
-

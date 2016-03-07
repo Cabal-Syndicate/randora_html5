@@ -9,4 +9,3 @@ class ClearFixElement : DivElement{
 		this ~= new Text("");
 	}
 }
-

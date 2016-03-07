@@ -12,3 +12,6 @@ package import html5.elements.section;
 package import html5.elements.tabular;
 package import html5.elements.text_level;
 
+package import std.meta;
+package import std.typecons;
+

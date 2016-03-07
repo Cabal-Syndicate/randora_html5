@@ -2,15 +2,11 @@ module html5.elements.edit;
 
 import html5;
 
-class EditElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class InsElement : Html5Element!("ins"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class InsElement : EditElementPrototype!("ins"){
-	mixin(ElementConstructorTemplate!());
-}
-
-class DelElement : EditElementPrototype!("ins"){
+class DelElement : Html5Element!("del"){
 	mixin(ElementConstructorTemplate!());
 }
 

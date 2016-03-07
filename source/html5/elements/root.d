@@ -2,10 +2,7 @@ module html5.elements.root;
 
 import html5;
 
-class RootElementPrototype(string tag_name = "") : Html5Element!(tag_name){
+class HtmlElement : Html5Element!("html"){
 	mixin(ElementConstructorTemplate!());
-}
-
-class HtmlElement : RootElementPrototype!("html"){
-	mixin(ElementConstructorTemplate!());
+	mixin(AttributeTemplate!(typeof(this), "manifest"));
 }
