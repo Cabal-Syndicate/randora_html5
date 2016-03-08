@@ -52,7 +52,10 @@ template AttributeTemplate(T, string var_name){
 	static const char[] AttributeTemplate = "
 	@property{
 		string _"~var_name~" = \"\";
-		typeof(this) "~var_name~"(string value = \"\"){
+		string "~var_name~"(){
+			return this.tag.attr[\""~var_name~"\"];
+		}
+		typeof(this) "~var_name~"(string value){
 			this.tag.attr[\""~var_name~"\"] = value;
 			return this;
 		}
@@ -126,7 +129,7 @@ class Html5Element(string tag_name = "", bool CAN_BE_EMPTY = false) : Element{
 	this(string value = ""){
 		super(new Html5Tag!(tag_name)());
 		if(can_be_empty){
-			this ~= new Text(value); //TODO: Temporary fix. Firefox doesn't like it when some elements are empty;
+			this ~= new Text(value);
 		}
 	}
 
