@@ -60,8 +60,8 @@ template AttributeTemplate(T, string var_name){
 	";
 }
 
-class Html5Element(string tag_name = "") : Element{
-	bool can_be_empty = false;
+class Html5Element(string tag_name = "", bool CAN_BE_EMPTY = false) : Element{
+	bool can_be_empty = CAN_BE_EMPTY;
 	bool[string] _classes = null;
 	
 	mixin(AttributeTemplate!(typeof(this), "id"));
