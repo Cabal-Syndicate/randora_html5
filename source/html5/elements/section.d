@@ -8,6 +8,18 @@ class ArticleElement : Html5Element!("article"){
 
 class BodyElement : Html5Element!("body"){
 	mixin(ElementConstructorTemplate!());
+	mixin(AttributeTemplate!(typeof(this), "onafterprint"));
+	mixin(AttributeTemplate!(typeof(this), "onbeforeprint"));
+	mixin(AttributeTemplate!(typeof(this), "onbeforeunload"));
+	mixin(AttributeTemplate!(typeof(this), "onhashchange"));
+	mixin(AttributeTemplate!(typeof(this), "onmessage"));
+	mixin(AttributeTemplate!(typeof(this), "onoffline"));
+	mixin(AttributeTemplate!(typeof(this), "ononline"));
+	mixin(AttributeTemplate!(typeof(this), "onpagehide"));
+	mixin(AttributeTemplate!(typeof(this), "onpageshow"));
+	mixin(AttributeTemplate!(typeof(this), "onpopstate"));
+	mixin(AttributeTemplate!(typeof(this), "onstorage"));
+	mixin(AttributeTemplate!(typeof(this), "onunload"));
 }
 
 class SectionElement : Html5Element!("section"){
