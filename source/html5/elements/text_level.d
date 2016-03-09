@@ -20,7 +20,7 @@ class StrongElement : Html5Element!("strong"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SmallElement : Html5Element!("small", true){
+class SmallElement : Html5Element!("small"){
 	mixin(ElementConstructorTemplate!());
 }
 
@@ -33,7 +33,8 @@ class CiteElement : Html5Element!("cite"){
 }
 
 class QElement : Html5Element!("q"){
-	mixin(ElementConstructorTemplate!());
+	mixin(ElementConstructorTemplate!());A
+	mixin(AttributeTemplate!(typeof(this), "cite"));
 }
 
 class DfnElement : Html5Element!("dfn"){
@@ -46,10 +47,13 @@ class AbbrElement : Html5Element!("abbr"){
 
 class DataElement : Html5Element!("data"){
 	mixin(ElementConstructorTemplate!());
+	mixin(AttributeTemplate!(typeof(this), "value"));
 }
+
 
 class TimeElement : Html5Element!("time"){
 	mixin(ElementConstructorTemplate!());
+	mixin(AttributeTemplate!(typeof(this), "datetime"));
 }
 
 class CodeElement : Html5Element!("code"){

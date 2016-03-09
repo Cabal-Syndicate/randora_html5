@@ -16,6 +16,7 @@ class PreElement : Html5Element!("pre"){
 }
 class BlockquoteElement : Html5Element!("blockquote"){
 	mixin(ElementConstructorTemplate!());
+>-mixin(AttributeTemplate!(typeof(this), "cite"));
 }
 class DlElement : Html5Element!("dl"){
 	mixin(ElementConstructorTemplate!());
@@ -28,6 +29,9 @@ class DdElement : Html5Element!("dd"){
 }
 class OlElement : Html5Element!("ol"){
 	mixin(ElementConstructorTemplate!());
+>-mixin(AttributeTemplate!(typeof(this), "reversed"));
+>-mixin(AttributeTemplate!(typeof(this), "start"));
+>-mixin(AttributeTemplate!(typeof(this), "type"));
 }
 class UlElement : Html5Element!("ul"){
 	mixin(ElementConstructorTemplate!());
