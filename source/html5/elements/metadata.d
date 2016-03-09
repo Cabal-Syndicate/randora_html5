@@ -15,6 +15,7 @@ class LinkElement : Html5Element!("link"){
 }
 
 class MetaElement : Html5Element!("meta"){
+	bool can_be_empty = true;
 	mixin(ElementConstructorTemplate!());
 }
 

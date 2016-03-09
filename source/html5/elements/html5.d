@@ -52,7 +52,10 @@ template AttributeTemplate(T, string var_name){
 	static const char[] AttributeTemplate = "
 	@property{
 		string _"~var_name~" = \"\";
-		typeof(this) "~var_name~"(string value = \"\"){
+		string "~var_name~"(){
+			return this.tag.attr[\""~var_name~"\"];
+		}
+		typeof(this) "~var_name~"(string value){
 			this.tag.attr[\""~var_name~"\"] = value;
 			return this;
 		}
@@ -60,7 +63,8 @@ template AttributeTemplate(T, string var_name){
 	";
 }
 
-class Html5Element(string tag_name = "") : Element{
+class Html5Element(string tag_name = "", bool CAN_BE_EMPTY = false) : Element{
+	bool can_be_empty = CAN_BE_EMPTY;
 	bool[string] _classes = null;
 	
 	mixin(AttributeTemplate!(typeof(this), "id"));
@@ -124,7 +128,9 @@ class Html5Element(string tag_name = "") : Element{
 	
 	this(string value = ""){
 		super(new Html5Tag!(tag_name)());
-		this ~= new Text(value); //TODO: Temporary fix. Firefox doesn't like it when some elements are empty;
+		if(can_be_empty){
+			this ~= new Text(value);
+		}
 	}
 
 	this(Element element){

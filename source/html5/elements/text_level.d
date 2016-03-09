@@ -20,7 +20,7 @@ class StrongElement : Html5Element!("strong"){
 	mixin(ElementConstructorTemplate!());
 }
 
-class SmallElement : Html5Element!("small"){
+class SmallElement : Html5Element!("small", true){
 	mixin(ElementConstructorTemplate!());
 }
 
